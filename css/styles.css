@@ -11,13 +11,14 @@
   --neon: #00fd9c;
   --dark-slate-blue: #2857a4;
   --grey: #adbcc7;
+  --light-black: #1A1A1D;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  background-color: var(--black);
+  background-color: var(--light-black);
 }
 
 #body-header {
