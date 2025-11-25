@@ -475,8 +475,8 @@ body {
   height: 0.5rem;
   background-color: var(--neon);
   position: absolute;
-  top: 25%;
-  right: -26.9%;
+  top: 20%;
+  right: -26.7%;
   z-index: 10;
 }
 
@@ -488,7 +488,7 @@ body {
   background-color: var(--neon);
   position: absolute;
   top: 25%;
-  left: -16.5%;
+  left: -16%;
   z-index: 10;
 }
 
@@ -515,11 +515,15 @@ body {
 
 .timeline-divider {
   position: absolute;
-  height: 64vh;
+  height: 39.8vh;
   width: 0;
   border: 3px dashed var(--dark-slate-blue);
-  top: 10%;
+  top: 9.4%;
   left: 51%;
+}
+
+#work_divider {
+  height: 38.8vh;
 }
 
 .timeline-traveler {
@@ -818,5 +822,49 @@ form {
   .get-touch {
     padding-top: 10%;
     transform: translate(2%, 1%);
+  }
+}
+
+@media (max-width: 400px) {
+  #tm h4 {
+    transform: translate(1vh, 10vh);
+  }
+  .timeline-box:nth-child(2n + 1)::after,
+  .timeline-box:nth-child(2n)::after {
+    left: -51px;
+    right: auto;
+  }
+  #tm::after {
+    left: -20.2%;
+  }
+  #work_divider {
+    height: 159.5vh;
+    top: 15vh;
+  }
+  #education_divider {
+    height: 147vh;
+    top: 16vh;
+  }
+}
+
+@media (max-width: 412px) {
+  #tm h4 {
+    transform: translate(1vh, 8vh);
+  }
+  #tm::after {
+    left: -20%;
+  }
+  .timeline-box:nth-child(2n + 1)::after,
+  .timeline-box:nth-child(2n)::after {
+    left: -55px;
+    right: auto;
+  }
+  #work_divider {
+    height: 112vh;
+    top: 10vh;
+  }
+  #education_divider {
+    height: 103vh;
+    top: 10vh;
   }
 }
