@@ -825,7 +825,7 @@ form {
   }
 }
 
-@media (max-width: 400px) {
+@media (min-width: 400px) {
   #tm h4 {
     transform: translate(1vh, 10vh);
   }
@@ -861,6 +861,34 @@ form {
   }
   #work_divider {
     height: 112vh;
+    top: 10vh;
+  }
+  #education_divider {
+    height: 103vh;
+    top: 10vh;
+  }
+}
+@media (max-width: 360px) {
+  #work_divider {
+    height: 120.5vh;
+    top: 11vh;
+  }
+  #education_divider {
+    height: 108vh;
+    top: 12vh;
+  }
+  #tm::after {
+    left: -21%;
+  }
+  .timeline-box:nth-child(2n + 1)::after,
+  .timeline-box:nth-child(2n)::after {
+    left: -50px;
+    right: auto;
+  }
+}
+@media (max-width: 300px) {
+  #work_divider {
+    height: 500px;
     top: 10vh;
   }
   #education_divider {
