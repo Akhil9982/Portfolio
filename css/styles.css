@@ -455,13 +455,7 @@ body {
 
 #tm h4 {
   text-align: start;
-  transform: translateY(-10%);
   margin-left: 2%;
-}
-
-#tm > img {
-  float: right;
-  transform: translate(-15%, -100%);
 }
 
 .timeline-box:nth-child(2n) {
@@ -475,8 +469,8 @@ body {
   height: 0.5rem;
   background-color: var(--neon);
   position: absolute;
-  top: 20%;
-  right: -26.7%;
+  top: 4%;
+  right: -24%;
   z-index: 10;
 }
 
@@ -487,56 +481,45 @@ body {
   height: 0.5rem;
   background-color: var(--neon);
   position: absolute;
-  top: 25%;
-  left: -16%;
-  z-index: 10;
+  top: 20%;
+  left: -18.5%;
+  z-index: 2;
 }
 
 /* Education Timeline Adjustments */
 
 #tb-el_1 i {
-  float: left;
-  transform: translate(10%, 10%) scale(2);
+  transform: scale(2.5);
   color: var(--grey);
 }
 
-#tb-el_1 h4 {
-  transform: translate(-4%, 40%);
-}
-
-#tb-el_1 p {
-  transform: translateY(50%);
-}
-
-#tb-el_1 div {
-  padding-top: 5%;
-}
 /* Timeline Divider */
 
 .timeline-divider {
   position: absolute;
-  height: 39.8vh;
-  width: 0;
-  border: 3px dashed var(--dark-slate-blue);
-  top: 9.4%;
-  left: 51%;
-}
-
-#work_divider {
-  height: 38.8vh;
+  left: 50%;
+  top: 0%;
+  width: 1px;
+  height: 80px;
+  border-left: 5px dashed var(--dark-slate-blue);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  z-index: 1;
+  justify-items: center;
 }
 
 .timeline-traveler {
   position: sticky;
   top: 25%;
-  left: -1%;
-  transform: rotate(90deg) scale(1.8);
-  z-index: 2;
+  left: -50px;
+  transform: rotate(90deg) scale(1.5);
+  z-index: 3;
   color: var(--crimson);
 }
 
-#bus i {
-  transform: rotate(-90deg);
+#bus {
+  transform: scale(1.5);
 }
 
 /* Portfolio */
@@ -779,34 +762,27 @@ form {
     line-height: 1.5;
   }
 
-  .timeline-divider {
-    left: -8%;
-    height: 100%;
-    top: 0;
-    z-index: 1;
-  }
-
   .timeline-traveler {
-    left: -20px;
-    top: 10%;
+    left: 55%;
+    transform: translateX(-50%) rotate(90deg) scale(1.6);
+    top: 12%;
   }
 
   .timeline-box:nth-child(2n + 1)::after,
   .timeline-box:nth-child(2n)::after {
-    left: -63px;
-    right: auto;
+    left: 10%;
+    right: 10%;
+    transform: translateX(-50%);
+    top: -10px;
   }
 
   #tm::after {
-    left: -19.5%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   #tm {
-    left: 8%;
-  }
-
-  #tm h4 {
-    transform: translate(0%, 250%);
+    left: 20%;
   }
 
   /* Contact Me Section */
@@ -825,74 +801,135 @@ form {
   }
 }
 
-@media (min-width: 400px) {
-  #tm h4 {
-    transform: translate(1vh, 10vh);
+/* ---------------------------------------
+   Universal Mobile First Fix (≤ 480px)
+----------------------------------------*/
+@media only screen and (max-width: 480px) {
+  .timeline-divider {
+    left: -10%;
+    height: 90%;
   }
+
   .timeline-box:nth-child(2n + 1)::after,
   .timeline-box:nth-child(2n)::after {
-    left: -51px;
-    right: auto;
+    left: -11%;
+    top: 47%;
   }
+
+  .timeline-box:nth-child(2n + 1)::after {
+    top: 0%;
+  }
+
   #tm::after {
-    left: -20.2%;
+    left: -11%;
   }
-  #work_divider {
-    height: 159.5vh;
-    top: 15vh;
+
+  #tm,
+  #tb-el {
+    left: auto;
   }
+
+  .timeline-box {
+    width: 100%;
+    left: 5%;
+    top: -10%;
+  }
+
+  .profile_img img {
+    transform: translateY(-35%);
+  }
+
   #education_divider {
-    height: 147vh;
-    top: 16vh;
+    height: 92%;
+  }
+
+  #tb-el_1 {
+    left: auto;
   }
 }
 
-@media (max-width: 412px) {
-  #tm h4 {
-    transform: translate(1vh, 8vh);
+/* ---------------------------------------
+   Devices with height ≥ 780px
+----------------------------------------*/
+@media only screen and (min-height: 780px) {
+  #body-header {
+    height: 55vh;
   }
-  #tm::after {
-    left: -20%;
-  }
-  .timeline-box:nth-child(2n + 1)::after,
-  .timeline-box:nth-child(2n)::after {
-    left: -55px;
-    right: auto;
-  }
-  #work_divider {
-    height: 112vh;
-    top: 10vh;
-  }
-  #education_divider {
-    height: 103vh;
-    top: 10vh;
+  .timeline-divider {
+    height: 78%;
   }
 }
-@media (max-width: 360px) {
-  #work_divider {
-    height: 120.5vh;
-    top: 11vh;
+
+/* ---------------------------------------
+   Landscape Mode for Small Devices
+----------------------------------------*/
+@media only screen and (max-width: 820px) and (orientation: landscape) {
+  .timeline-box {
+    width: 80%;
+    left: 10%;
   }
-  #education_divider {
-    height: 108vh;
-    top: 12vh;
-  }
-  #tm::after {
-    left: -21%;
-  }
-  .timeline-box:nth-child(2n + 1)::after,
-  .timeline-box:nth-child(2n)::after {
-    left: -50px;
-    right: auto;
+  .timeline-divider {
+    height: 120%;
   }
 }
-@media (max-width: 300px) {
-  #work_divider {
-    height: 500px;
-    top: 10vh;
+
+/* ---------------------------------------
+   Portrait Mode Large Height Devices
+----------------------------------------*/
+@media only screen and (min-height: 780px) and (orientation: portrait) {
+  .timeline-box {
+    margin-bottom: 3rem;
   }
-  #education_divider {
-    height: 103vh;
-    top: 10vh;
+  .timeline-divider {
+    height: 90%;
   }
+}
+
+@media only screen and (max-width: 330px) {
+  .timeline-box {
+    width: 95%;
+    left: 2.5%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-box h4 {
+    font-size: 0.95rem;
+  }
+
+  .timeline-box span,
+  .timeline-box p {
+    font-size: 0.75rem;
+  }
+
+  .timeline-divider {
+    height: 100%;
+  }
+
+  .timeline-traveler {
+    top: 15%;
+    transform: translateX(-50%) rotate(90deg) scale(1.4);
+  }
+}
+
+/* ====== SVG TIMELINE UPGRADE (NON-DESTRUCTIVE) ====== */
+
+.timeline-svg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.connector-svg {
+  position: absolute;
+  left: calc(50% - 25px);
+  top: -25px;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
 }
