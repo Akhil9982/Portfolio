@@ -11,20 +11,48 @@
   --neon: #00fd9c;
   --dark-slate-blue: #2857a4;
   --grey: #adbcc7;
-  --light-black: #1A1A1D;
+  --light-black: #1a1a1d;
 }
+
+/* CSS for Particles Animation */
+
+/* ---- reset ---- */
+body {
+  margin: 0;
+  font: normal 75% Arial, Helvetica, sans-serif;
+}
+canvas {
+  display: block;
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: black;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Particles Animation Code Ends */
 
 body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  background-color: var(--light-black);
+  background: transparent;
 }
 
 #body-header {
   height: 65vh;
   opacity: 0.9;
-  background-image: url("../multimedia/bg-img.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -200,15 +228,12 @@ body {
 /* Short Description */
 
 .short_desc {
-  margin-left: 35%;
-  margin-top: 10%;
-  margin-right: 25%;
+  justify-items: center;
 }
 
 .short_desc p {
   color: #78a083;
   font-weight: 700;
-  transform: translateY(-50%);
 }
 
 .short_desc p em {
@@ -394,7 +419,6 @@ body {
   margin: 5px;
   background-color: #ffffff09;
   border-radius: 15px;
-  box-shadow: 0 0 20px #00ffaa33;
 }
 
 .timeline-box img {
@@ -452,7 +476,7 @@ body {
   background-color: var(--neon);
   position: absolute;
   top: 25%;
-  right: -26.6%;
+  right: -26.9%;
   z-index: 10;
 }
 
@@ -464,7 +488,7 @@ body {
   background-color: var(--neon);
   position: absolute;
   top: 25%;
-  left: -16%;
+  left: -16.5%;
   z-index: 10;
 }
 
@@ -491,7 +515,7 @@ body {
 
 .timeline-divider {
   position: absolute;
-  height: 75%;
+  height: 64vh;
   width: 0;
   border: 3px dashed var(--dark-slate-blue);
   top: 10%;
@@ -501,7 +525,7 @@ body {
 .timeline-traveler {
   position: sticky;
   top: 25%;
-  left: -20%;
+  left: -1%;
   transform: rotate(90deg) scale(1.8);
   z-index: 2;
   color: var(--crimson);
@@ -720,7 +744,6 @@ form {
     margin-bottom: 2.5rem;
     background-color: #ffffff09;
     border-radius: 12px;
-    box-shadow: 0 0 10px #00ffaa33;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -766,7 +789,7 @@ form {
 
   .timeline-box:nth-child(2n + 1)::after,
   .timeline-box:nth-child(2n)::after {
-    left: -62px;
+    left: -63px;
     right: auto;
   }
 
