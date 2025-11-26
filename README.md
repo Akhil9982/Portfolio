@@ -1,19 +1,123 @@
-<h1 align="center">Hi 👋, I'm Akhil</h1>
-<h3 align="center">A passionate frontend developer from India</h3>
+<h1 align="center">🌟 My Portfolio Website 🌟</h1>
 
-- 🌱 I’m currently learning **Full - Stack Web Development**
-
-- 👯 I’m looking to collaborate on **WebDev Projects**
-
-- 📫 How to reach me **b_akhilkumar@outlook.com**
-
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/akhilbattula" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="akhilbattula" height="30" width="40" /></a>
-<a href="https://fb.com/bakhil.kumar.104" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="bakhil.kumar.104" height="30" width="40" /></a>
-<a href="https://instagram.com/i_am_akhil_battula" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="i_am_akhil_battula" height="30" width="40" /></a>
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Live-success?style=flat-square" />
+  <img src="https://img.shields.io/badge/Made%20With-HTML%20%26%20CSS-blue?style=flat-square" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" />
 </p>
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://sass-lang.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/> </a> </p>
+<p align="center">
+  A modern, clean, and responsive portfolio website showcasing my skills, projects, and experience as a web developer.
+</p>
 
+---
+
+## 🚀 Live Demo
+
+🔗 **View Portfolio:**  
+https://akhil9982.github.io/Portfolio/
+
+---
+
+## ✨ Features
+
+✔️ Fully responsive layout  
+✔️ Clean and modern UI  
+✔️ Smooth animations & transitions  
+✔️ Projects and skills showcased clearly  
+✔️ Contact section included  
+✔️ Lightweight & fast (pure HTML + CSS)
+
+---
+
+## 🧰 Tech Stack
+
+| Technology | Usage |
+|-----------|--------|
+| **HTML5** | Structure of the website |
+| **CSS3** | Styling, layout, animations |
+| **JavaScript (soon)** | Planned for future enhancements |
+| **Particles.js (planned)** | For interactive hero backgrounds |
+| **GitHub Pages** | Hosting the live site |
+
+---
+
+## 📁 Folder Structure
+
+```
+Portfolio/
+│
+├── index.html
+├── css/
+│   ├── style.css
+│   └── responsive.css   (optional future file)
+├── multimedia/
+│   ├── images/
+│   └── icons/
+├── README.md
+└── LICENSE
+```
+
+---
+
+## 🛠️ How to Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/Akhil9982/Portfolio.git
+
+# Go inside the folder
+cd Portfolio
+
+# Open in your browser
+Open index.html manually
+```
+
+---
+
+## 📌 Future Enhancements (Roadmap)
+
+🔹 Add **JavaScript animations** and interactions  
+🔹 Integrate **Particles.js** for dynamic hero background  
+🔹 Add **dark/light mode toggle**  
+🔹 Add **Project cards** with hover animations  
+🔹 Add **Contact form with backend support**  
+🔹 Convert the site into **React-based portfolio**  
+🔹 Improve accessibility & SEO  
+
+---
+
+## 🧑‍💻 About Me
+
+I’m **Akhil Battula**, a passionate developer exploring the world of  
+**Web Development, JavaScript, UI/UX, and Full-Stack Technologies**.
+
+🌱 Currently learning **React & Advanced JavaScript**  
+🎯 Goal: Build modern, professional-grade web applications  
+📫 Email: **b_akhilkumar@outlook.com**
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!  
+Feel free to open a pull request or raise an issue.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.  
+See the `LICENSE` file for more information.
+
+---
+
+## ⭐ Show Your Support
+
+If you like this portfolio, feel free to **star ⭐ the repository** — it helps a lot!
+
+---
+
+## 🙏 Thanks for Visiting!
+
+Feel free to explore and connect!
