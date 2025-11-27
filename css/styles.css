@@ -719,9 +719,17 @@ form {
     display: block;
   }
 
+  #name-social-container {
+    margin-top: 50%;
+  }
+
+  .profile_img {
+    transform: translateY(30%);
+  }
+
   .navbar-nav {
     position: absolute;
-    top: 3.5rem; /* just below the hamburger icon */
+    top: 2.5rem; /* just below the hamburger icon */
     right: 1rem; /* aligned with the hamburger icon */
     background-color: transparent;
     padding: 3%;
@@ -889,6 +897,15 @@ form {
   #msg,
   .form-control {
     width: 190%;
+  }
+}
+
+/* ---------------------------------------
+   Devices with width ≥ 1225px
+----------------------------------------*/
+@media only screen and (min-height: 780px) {
+  .profile_img {
+    transform: translateY(15%);
   }
 }
 
