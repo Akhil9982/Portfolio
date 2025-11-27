@@ -14,6 +14,41 @@
   --light-black: #1a1a1d;
 }
 
+/* 1. Progress Bar Styles */
+.progress-container {
+  position: fixed; /* Stick to the top of the screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030; /* Ensure it sits above other content (Bootstrap navbars usually are 1030) */
+  background-color: transparent; /* Make the track transparent */
+}
+
+.thin-bar {
+  height: 5px; /* Thin line height */
+}
+
+.gradient-custom {
+  /* Vibrant gradient */
+  background: linear-gradient(90deg, #fd1d1d 0%, #833ab4 50%, #00d2ff 100%);
+  background-size: 300% 300%;
+  animation: gradientMove 3s ease infinite;
+  width: 0%; /* Start at 0 width */
+  transition: width 0.1s; /* Smooth transition for the width change */
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* CSS for Particles Animation */
 
 /* ---- reset ---- */
