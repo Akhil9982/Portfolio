@@ -201,6 +201,10 @@ body {
   color: var(--neon);
 }
 
+.subtitle {
+  color: var(--white);
+}
+
 .social-links {
   list-style: none;
   text-align: center;
