@@ -14,9 +14,17 @@
   --light-black: #1a1a1d;
 }
 
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: clip; /* modern & animation-safe */
+}
+
+.timeline,
+.timeline * {
+  overflow: visible;
 }
 
 /* 1. Progress Bar Styles */
@@ -538,6 +546,8 @@ body {
 }
 
 /* Timeline Divider */
+
+
 
 .timeline-divider {
   position: absolute;
