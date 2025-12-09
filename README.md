@@ -37,7 +37,7 @@ https://akhil9982.github.io/Portfolio/
 | **HTML5** | Structure of the website |
 | **CSS3** | Styling, layout, animations |
 | **JavaScript (soon)** | Planned for future enhancements |
-| **Particles.js (planned)** | For interactive hero backgrounds |
+| **Particles.js** | For interactive hero backgrounds |
 | **GitHub Pages** | Hosting the live site |
 
 ---
