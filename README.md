@@ -50,10 +50,8 @@ Portfolio/
 ├── index.html
 ├── css/
 │   ├── style.css
-│   └── responsive.css   (optional future file)
 ├── multimedia/
-│   ├── images/
-│   └── icons/
+├── javascript/
 ├── README.md
 └── LICENSE
 ```
