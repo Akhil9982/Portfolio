@@ -1,275 +1,513 @@
-<!DOCTYPE html>
+!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akhil Batulla — Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Akhil Batulla | Full Stack MERN Developer</title>
-    <meta name="description"
-        content="Portfolio of Akhil Batulla, a Full Stack Web Developer based in Bhubaneswar, India.">
-    <meta name="description"
-        content="Akhil Batulla is a Frontend Developer specializing in React, JavaScript, and modern web applications. Explore projects, skills, and contact details.">
-    <meta name="description"
-        content="Akhil Batulla is a Frontend Developer specializing in React, JavaScript, and modern web applications. Explore projects, skills, and contact details.">
-    <meta property="og:title" content="Akhil Batulla | Frontend Developer">
-    <meta property="og:description" content="React & JavaScript Developer Portfolio">
-    <meta property="og:image" content="https://akhil9982.github.io/Portfolio/preview.png">
-    <meta property="og:url" content="https://akhil9982.github.io/Portfolio/">
-    <meta property="og:title" content="Akhil Batulla | Frontend Developer">
-    <meta property="og:description" content="React & JavaScript Developer Portfolio">
-    <meta property="og:image" content="https://akhil9982.github.io/Portfolio/preview.png">
-    <meta property="og:url" content="https://akhil9982.github.io/Portfolio/">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <meta
+      name="description"
+      content="Portfolio of Akhil Batulla, a Full Stack Web Developer based in Bhubaneswar, India."
+    />
+    <meta
+      name="description"
+      content="Akhil Batulla is a Frontend Developer specializing in React, JavaScript, and modern web applications. Explore projects, skills, and contact details."
+    />
+    <meta
+      name="description"
+      content="Akhil Batulla is a Frontend Developer specializing in React, JavaScript, and modern web applications. Explore projects, skills, and contact details."
+    />
+    <meta property="og:title" content="Akhil Batulla | Frontend Developer" />
+    <meta
+      property="og:description"
+      content="React & JavaScript Developer Portfolio"
+    />
+    <meta
+      property="og:image"
+      content="https://akhil9982.github.io/Portfolio/preview.png"
+    />
+    <meta property="og:url" content="https://akhil9982.github.io/Portfolio/" />
+    <meta property="og:title" content="Akhil Batulla | Frontend Developer" />
+    <meta
+      property="og:description"
+      content="React & JavaScript Developer Portfolio"
+    />
+    <meta
+      property="og:image"
+      content="https://akhil9982.github.io/Portfolio/preview.png"
+    />
+    <meta property="og:url" content="https://akhil9982.github.io/Portfolio/" />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="sitemap.xml"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <script defer src="javascript/script.js"></script>
     <link rel="icon" type="image/x-icon" href="multimedia/favicon.ico" />
-</head>
-
-<body class="loading">
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
-    <div id="scroll-progress"></div>
-    <div id="snow-container" class="snow-container"></div>
+  </head>
+  <body>
+    <!-- NAV -->
     <nav>
-        <div class="logo">Akhil Batulla</div>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="nav-links" id="navLinks">
-            <a href="#about" onclick="toggleMenu()">About</a>
-            <a href="#skills" onclick="toggleMenu()">Skills</a>
-            <a href="#projects" onclick="toggleMenu()">Projects</a>
-            <a href="#experience" onclick="toggleMenu()">Experience</a>
-            <a href="#contact" onclick="toggleMenu()">Contact</a>
-        </div>
+      <a href="#" class="nav-logo">AB_</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
-    <header class="hero" id="home">
-        <div class="hero-content">
-            <h1>Building Scalable Web <br> Applications with <br><span class="typing-text"></span></h1>
-            <p>Full Stack MERN Developer | React.js · Node.js · JavaScript Specialist</p>
-            <div>
-                <a href="#projects" class="btn">View My Work</a>
-                <a href="multimedia/B_Akhil_Full-Stack_Web_Developer_CV.pdf" class="btn btn-outline"
-                    target="_blank">Download Resume</a>
-            </div>
-        </div>
-    </header>
-    <section id="about" class="reveal">
-        <div class="section-title">
-            <h2>About Me</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="about-grid">
-            <div class="about-img">
-                <img src="multimedia/profile_img.JPG" alt="Akhil Batulla Profile">
-            </div>
-            <div class="about-text">
-                <h3>Transforming Ideas into Reality</h3>
-                <p>I am a Full Stack Web Developer with over 3 years of corporate experience in technical consulting and
-                    system optimization at <strong>Infosys</strong> and <strong>Tech Mahindra</strong>. My background
-                    has honed my ability to solve complex problems under pressure.</p>
-                <p>Recently, I have pivoted to full-time development, completing an intensive certification in
-                    <strong>Full Stack Web Development</strong> with Coding Ninjas. I specialize in the <strong>MERN
-                        Stack (MongoDB, Express, React, Node.js)</strong> and am passionate about writing clean,
-                    efficient code to build robust software solutions.
-                </p>
-                <div style="margin-top: 1.5rem;">
-                    <p><i class="fas fa-map-marker-alt" style="color:var(--primary-color); margin-right: 10px;"></i>
-                        Bhubaneswar, Odisha, India</p>
-                    <p><i class="fas fa-envelope" style="color:var(--primary-color); margin-right: 10px;"></i>
-                        b_akhilkumar@outlook.com</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="skills" style="background: var(--bg-light);" class="reveal">
-        <div class="section-title">
-            <h2>Technical Skills</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="skills-container">
-            <div class="skill-tag"><i class="fab fa-react"></i> React.js</div>
-            <div class="skill-tag"><i class="fab fa-js"></i> JavaScript (ES6+)</div>
-            <div class="skill-tag"><i class="fab fa-html5"></i> HTML5</div>
-            <div class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</div>
-            <div class="skill-tag"><i class="fab fa-bootstrap"></i> Bootstrap</div>
-            <div class="skill-tag"><i class="fab fa-sass"></i> SASS</div>
-            <div class="skill-tag"><i class="fab fa-node"></i> Node.js</div>
-            <div class="skill-tag"><i class="fab fa-git-alt"></i> Git</div>
-            <div class="skill-tag"><i class="fab fa-github"></i> GitHub</div>
-            <div class="skill-tag"><i class="fas fa-code"></i> VS Code</div>
-            <div class="skill-tag"><i class="fas fa-code"></i> JQuery</div>
-        </div>
-    </section>
-    <section id="experience" class="reveal">
-        <div class="section-title">
-            <h2>Experience</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="company-logo">
-                        <img src="multimedia/Infosys_logo_.jpeg" alt="Infosys Logo">
-                        <h3>Senior Associate Consultant | Infosys</h3>
-                    </div>
-                    <span class="timeline-date">Jan 2022 - Mar 2025</span>
-                </div>
-                <p>Developed and maintained Studio Scripts to automate business requirements. Managed critical P1
-                    incidents using ServiceNow and led the migration of complex IVR flows from Genesys to NiceCXOne
-                    Cloud.</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="company-logo">
-                        <img src="multimedia/tech_mahindra_logo.jpeg" alt="Tech Mahindra Logo">
-                        <h3>Associate Customer Support | Tech Mahindra</h3>
-                    </div>
-                    <span class="timeline-date">Jun 2019 - Jul 2021</span>
-                </div>
-                <p>Managed high-volume inbound queries for a leading e-commerce platform. Specialized in handling
-                    escalation calls and resolving complex customer issues with efficiency.</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="company-logo">
-                        <img src="multimedia/crushaders_tech_solutions_llp_logo.jpeg" alt="Crushaders Logo">
-                        <h3>Software Developer Intern | Crushaders Tech</h3>
-                    </div>
-                    <span class="timeline-date">May 2018 - Jun 2018</span>
-                </div>
-                <p>Built responsive frontend interfaces using HTML5, JavaScript, and jQuery. Assisted in backend
-                    integration using PHP and MySQL.</p>
-            </div>
-        </div>
-    </section>
-    <section id="projects" style="background: var(--bg-light);" class="reveal">
-        <div class="section-title">
-            <h2>Featured Projects</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="multimedia/dashboard_template.png" alt="Stock Market Analysis App">
-                </div>
-                <div class="project-info">
-                    <h3>Stock Market Analysis Dashboard</h3>
-                    <p>A dynamic financial dashboard fetching real-time stock data. Features complex DOM manipulation
-                        for visualizing market trends.</p>
-                    <div class="tech-stack">
-                        <span>Vanilla JS</span>
-                        <span>Fetch API</span>
-                        <span>CSS Grid</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Akhil9982/stock_market_Analysis_Using_Vanilla_JS" target="_blank"><i
-                                class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="multimedia/rock_paper_scissors.png" alt="Seat Booking App">
-                </div>
-                <div class="project-info">
-                    <h3>Movie Seat Booking System</h3>
-                    <p>Logic-heavy booking interface simulating a theater. Features real-time state management and data
-                        persistence using LocalStorage.</p>
-                    <div class="tech-stack">
-                        <span>JavaScript</span>
-                        <span>LocalStorage</span>
-                        <span>CSS3</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Akhil9982/Seat_Booking_App" target="_blank"><i
-                                class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="multimedia/edtech.png" alt="EdTech Platform">
-                </div>
-                <div class="project-info">
-                    <h3>EdTech Learning Platform</h3>
-                    <p>Comprehensive educational platform featuring course listings, interactive challenges, and a
-                        responsive learning dashboard.</p>
-                    <div class="tech-stack">
-                        <span>React.js</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Akhil9982/edutech/" target="_blank"><i class="fab fa-github"></i>
-                            Code</a>
-                        <a href="https://akhil9982.github.io/edutech/" target="_blank"><i
-                                class="fas fa-external-link-alt"></i> Live Demo</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="multimedia/dashboard_template.png" alt="Music Player App">
-                </div>
-                <div class="project-info">
-                    <h3>Web Music Player</h3>
-                    <p>Custom media player interface with play, pause, next/prev functionality and progress bar
-                        synchronization.</p>
-                    <div class="tech-stack">
-                        <span>JavaScript</span>
-                        <span>HTML5 Audio API</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Akhil9982/musicplayer" target="_blank"><i class="fab fa-github"></i>
-                            Code</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="education" class="reveal">
-        <div class="section-title">
-            <h2>Education</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="company-logo">
-                        <img src="multimedia/codingninjas_logo.jpeg" alt="Coding Ninjas Logo">
-                        <h3>Full Stack Web Development</h3>
-                    </div>
-                    <span class="timeline-date">Aug 2024 - Present</span>
-                </div>
-                <p>Coding Ninjas - Specialized in MERN Stack, Data Structures, and Algorithms.</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="company-logo">
-                        <img src="multimedia/GEC.jpeg" alt="College Logo">
-                        <h3>B.Tech, Computer Science & Eng.</h3>
-                    </div>
-                    <span class="timeline-date">Jun 2015 - Jun 2019</span>
-                </div>
-                <p>Gandhi Engineering College, Bhubaneshwar.</p>
-            </div>
-        </div>
-    </section>
-    <footer id="contact">
-        <div class="social-links">
-            <a href="https://github.com/Akhil9982" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/akhilbattula/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:b_akhilkumar@outlook.com"><i class="fas fa-envelope"></i></a>
-        </div>
-        <p>Designed & Built by Akhil Batulla | © 2026</p>
-    </footer>
-</body>
 
+    <!-- HERO -->
+    <section class="hero" style="border-top: none">
+      <div class="hero-grid-lines"></div>
+      <div class="hero-left">
+        <div class="hero-tag">Available for new roles</div>
+        <h1 class="hero-name">Akhil<br /><em>Batulla</em></h1>
+        <p class="hero-desc">
+          Full Stack MERN Developer building scalable web applications with
+          clean, efficient code and 3+ years of enterprise experience.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a
+            href="https://akhil9982.github.io/Portfolio/multimedia/B_Akhil_Full-Stack_Web_Developer_CV.pdf"
+            class="btn-outline"
+            target="_blank"
+            >Download CV</a
+          >
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-stat-card">
+          <div class="stat-num">3+</div>
+          <div class="stat-label">Years of experience</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Featured projects</div>
+        </div>
+        <div class="hero-stack">
+          <div class="stack-label">Core Stack</div>
+          <div class="stack-icons">
+            <span class="stack-pill">MongoDB</span>
+            <span class="stack-pill">Express</span>
+            <span class="stack-pill">React.js</span>
+            <span class="stack-pill">Node.js</span>
+            <span class="stack-pill">JavaScript</span>
+            <span class="stack-pill">Git</span>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-hint">
+        <div class="scroll-line"></div>
+        scroll
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-header reveal">
+        <div>
+          <span class="section-index">01</span>
+          <h2 class="section-title">About <em>Me</em></h2>
+        </div>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm a <strong>Full Stack Web Developer</strong> with a background in
+            enterprise technical consulting at <strong>Infosys</strong> and
+            <strong>Tech Mahindra</strong>. That experience sharpened my ability
+            to navigate complex systems and deliver under pressure.
+          </p>
+          <p>
+            I recently pivoted to full-time development, completing an intensive
+            <strong>MERN Stack certification</strong> at Coding Ninjas. I
+            specialize in building robust, responsive web applications from the
+            database layer all the way up to polished UI.
+          </p>
+          <p>
+            I write code that's clean by habit, not just when someone's
+            watching.
+          </p>
+          <div class="about-meta">
+            <div class="about-meta-item">
+              <span>📍</span><span>Bhubaneswar, Odisha, India</span>
+            </div>
+            <div class="about-meta-item">
+              <span>✉️</span><span>b_akhilkumar@outlook.com</span>
+            </div>
+            <div class="about-meta-item">
+              <span>🎓</span
+              ><span
+                >B.Tech, Computer Science — Gandhi Engineering College</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="about-right reveal reveal-delay-2">
+          <div class="about-card">
+            <div class="about-card-title">Currently learning</div>
+            <p style="font-size: 0.9rem; color: var(--ink2); line-height: 1.7">
+              Advanced MERN patterns, Data Structures & Algorithms, and system
+              design at Coding Ninjas (Aug 2024 – Present).
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="about-card-title">Background</div>
+            <p style="font-size: 0.9rem; color: var(--ink2); line-height: 1.7">
+              Former Senior Associate Consultant at Infosys — led IVR migrations
+              from Genesys to NiceCXone Cloud and managed P1 incidents via
+              ServiceNow.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-header reveal">
+        <div>
+          <span class="section-index">02</span>
+          <h2 class="section-title">Technical <em>Skills</em></h2>
+        </div>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid" id="skills-grid">
+        <div class="skill-item reveal">
+          <div class="skill-name">React.js</div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-item reveal reveal-delay-1">
+          <div class="skill-name">JavaScript ES6+</div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 92%"></div>
+          </div>
+        </div>
+        <div class="skill-item reveal reveal-delay-2">
+          <div class="skill-name">Node.js</div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 82%"></div>
+          </div>
+        </div>
+        <div class="skill-item reveal reveal-delay-3">
+          <div class="skill-name">MongoDB</div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 78%"></div>
+          </div>
+        </div>
+        <div class="skill-item reveal">
+          <div class="skill-name">HTML5 / CSS3</div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 95%"></div>
+          </div>
+        </div>
+        <div class="skill-item reveal reveal-delay-1">
+          <div class="skill-name">Express.js</div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 80%"></div>
+          </div>
+        </div>
+        <div class="skill-item reveal reveal-delay-2">
+          <div class="skill-name">Bootstrap / SASS</div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="skill-item reveal reveal-delay-3">
+          <div class="skill-name">Git / GitHub</div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 88%"></div>
+          </div>
+        </div>
+        <div class="skill-item reveal">
+          <div class="skill-name">jQuery</div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 75%"></div>
+          </div>
+        </div>
+        <div class="skill-item reveal reveal-delay-1">
+          <div class="skill-name">VS Code</div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 95%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-header reveal">
+        <div>
+          <span class="section-index">03</span>
+          <h2 class="section-title">Work <em>Experience</em></h2>
+        </div>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-date">Jan 2022 — Mar 2025</div>
+          <div class="timeline-role">Senior Associate Consultant</div>
+          <div class="timeline-company">Infosys</div>
+          <p class="timeline-desc">
+            Developed and maintained Studio Scripts to automate business
+            requirements. Managed critical P1 incidents via ServiceNow and led
+            the migration of complex IVR flows from Genesys to NiceCXone Cloud.
+          </p>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-date">Jun 2019 — Jul 2021</div>
+          <div class="timeline-role">Associate Customer Support</div>
+          <div class="timeline-company">Tech Mahindra</div>
+          <p class="timeline-desc">
+            Managed high-volume inbound queries for a leading e-commerce
+            platform. Specialized in escalation handling and resolving complex
+            customer issues with efficiency and empathy.
+          </p>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-date">May 2018 — Jun 2018</div>
+          <div class="timeline-role">Software Developer Intern</div>
+          <div class="timeline-company">Crushaders Tech Solutions</div>
+          <p class="timeline-desc">
+            Built responsive frontend interfaces using HTML5, JavaScript, and
+            jQuery. Assisted in backend integration using PHP and MySQL.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-header reveal">
+        <div>
+          <span class="section-index">04</span>
+          <h2 class="section-title">Featured <em>Projects</em></h2>
+        </div>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-num">Project 01</div>
+          <div class="project-title">Stock Market Analysis Dashboard</div>
+          <p class="project-desc">
+            Dynamic financial dashboard fetching real-time stock data with
+            complex DOM manipulation for visualizing market trends.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Vanilla JS</span>
+            <span class="project-tag">Fetch API</span>
+            <span class="project-tag">CSS Grid</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/Akhil9982/stock_market_Analysis_Using_Vanilla_JS"
+              target="_blank"
+              class="project-link"
+            >
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+              Source
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-num">Project 02</div>
+          <div class="project-title">Movie Seat Booking System</div>
+          <p class="project-desc">
+            Logic-heavy theater booking interface with real-time state
+            management and persistent state via LocalStorage.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">LocalStorage</span>
+            <span class="project-tag">CSS3</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/Akhil9982/Seat_Booking_App"
+              target="_blank"
+              class="project-link"
+            >
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+              Source
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-num">Project 03</div>
+          <div class="project-title">EdTech Learning Platform</div>
+          <p class="project-desc">
+            Full-stack educational platform with course listings, interactive
+            challenges, and a responsive learning dashboard built on the MERN
+            stack.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">React.js</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">MongoDB</span>
+            <span class="project-tag">Express</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/Akhil9982/edutech/"
+              target="_blank"
+              class="project-link"
+            >
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+              Source
+            </a>
+            <a
+              href="https://akhil9982.github.io/edutech/"
+              target="_blank"
+              class="project-link"
+              >↗ Live Demo</a
+            >
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-num">Project 04</div>
+          <div class="project-title">Web Music Player</div>
+          <p class="project-desc">
+            Custom media player interface with play, pause, next/prev
+            functionality and smooth progress bar synchronization using the
+            HTML5 Audio API.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">HTML5 Audio API</span>
+            <span class="project-tag">CSS3</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/Akhil9982/musicplayer"
+              target="_blank"
+              class="project-link"
+            >
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+              Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="contact-inner">
+        <div>
+          <span class="section-index reveal">05</span>
+          <div class="contact-big reveal">
+            Let's<br /><em>work</em><br />together.
+          </div>
+          <p class="contact-sub reveal">
+            Open to full-time roles, freelance projects, and interesting
+            collaborations. Drop me a message — I reply fast.
+          </p>
+          <a href="mailto:b_akhilkumar@outlook.com" class="contact-email reveal"
+            >b_akhilkumar@outlook.com ↗</a
+          >
+        </div>
+        <div class="contact-right reveal reveal-delay-2">
+          <a
+            href="https://github.com/Akhil9982"
+            target="_blank"
+            class="contact-card"
+          >
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="contact-card-label">GitHub</div>
+              <div class="contact-card-value">github.com/Akhil9982</div>
+            </div>
+          </a>
+          <a href="mailto:b_akhilkumar@outlook.com" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.910 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="contact-card-label">Email</div>
+              <div class="contact-card-value">b_akhilkumar@outlook.com</div>
+            </div>
+          </a>
+          <a
+            href="https://akhil9982.github.io/Portfolio/multimedia/B_Akhil_Full-Stack_Web_Developer_CV.pdf"
+            target="_blank"
+            class="contact-card"
+          >
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM12 17l-4-4h2.5v-3h3v3H16l-4 4z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="contact-card-label">Resume</div>
+              <div class="contact-card-value">Download PDF</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>Akhil Batulla © 2026</span>
+      <span>Bhubaneswar, Odisha, India</span>
+      <span>Full Stack MERN Developer</span>
+    </footer>
+  </body>
 </html>
