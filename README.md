@@ -35,9 +35,9 @@ https://akhil9982.github.io/Portfolio/
 | Technology | Usage |
 |-----------|--------|
 | **HTML5** | Structure of the website |
-| **CSS3** | Styling, layout, animations |
+| **CSS3 & Tailwind CSS** | Styling, layout, animations |
 | **JavaScript (soon)** | Planned for future enhancements |
-| **Particles.js** | For interactive hero backgrounds |
+| **React.JS** | For UI/UX |
 | **GitHub Pages** | Hosting the live site |
 
 ---
@@ -92,7 +92,7 @@ I’m **Akhil Battula**, a passionate developer exploring the world of
 
 🌱 Currently learning **React & Advanced JavaScript**  
 🎯 Goal: Build modern, professional-grade web applications  
-📫 Email: **b_akhilkumar@outlook.com**
+📫 Email: **akhilbatulla@gmail.com**
 
 ---
 
