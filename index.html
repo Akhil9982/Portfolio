@@ -1,660 +1,749 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Akhil Battula — Full / MERN Stack Developer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="shortcut icon" href="multimedia/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- NAV -->
-    <nav>
-      <a href="#" class="nav-logo">AB_</a>
-      <ul class="nav-links">
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-      <a href="mailto:b_akhilkumar@outlook.com" class="nav-cta">Hire Me →</a>
-    </nav>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Akhil Batulla — Full Stack MERN Developer</title>
+<meta name="description" content="Akhil Batulla — Full Stack MERN Developer. 5.5 years of enterprise engineering, now shipping React/Node/MongoDB products." />
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="hero-eyebrow">
-        <span class="status-dot"></span>
-        <span class="status-text">Available for full-time roles</span>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7/babel.min.js" crossorigin></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#0E1423',
+          panel: '#151D33',
+          panel2: '#1B2440',
+          edge: '#2A3550',
+          hi: '#EDF1F7',
+          lo: '#8C99B3',
+          amber: '#F5A623',
+          teal: '#4FD1C5',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace'],
+        },
+      },
+    },
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #0E1423; }
+  ::selection { background: #F5A623; color: #0E1423; }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  .glow-amber { box-shadow: 0 0 0 1px rgba(245,166,35,0.25), 0 18px 40px -20px rgba(245,166,35,0.35); }
+  .glow-teal { box-shadow: 0 0 0 1px rgba(79,209,197,0.25), 0 18px 40px -20px rgba(79,209,197,0.35); }
+
+  .blink::after {
+    content: '_';
+    animation: blink 1s step-end infinite;
+    color: #F5A623;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  .timeline-line {
+    background: linear-gradient(to bottom, #2A3550, transparent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .blink::after { animation: none; }
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #0E1423; }
+  ::-webkit-scrollbar-thumb { background: #2A3550; border-radius: 6px; }
+</style>
+</head>
+<body class="font-body text-hi antialiased">
+<div id="root"></div>
+
+<script type="text/babel" data-presets="react">
+const { useEffect, useRef, useState } = React;
+
+/* ---------------- Data ---------------- */
+
+const NAV_LINKS = [
+  { id: 'projects', label: 'Deployments' },
+  { id: 'stack', label: 'Stack' },
+  { id: 'log', label: 'Log' },
+  { id: 'about', label: 'About' },
+];
+
+const STATS = [
+  { value: '5.5+', label: 'YRS ENTERPRISE IT', sub: 'Infosys · Tech Mahindra' },
+  { value: '4', label: 'PROJECTS SHIPPED', sub: 'MERN, deployed & live' },
+  { value: '2', label: 'CLOUD MIGRATIONS LED', sub: 'Genesys → NICE CXone' },
+  { value: 'MERN', label: 'CORE STACK', sub: 'React · Node · Mongo' },
+];
+
+const PROJECTS = [
+  {
+    id: '01',
+    status: 'LIVE',
+    statusColor: 'teal',
+    name: 'TixHub',
+    tag: 'Ticket Management System',
+    desc: "A production-deployed, role-based support ticket platform built end-to-end on the MERN stack. Customers raise and track issues, agents work a live queue, and admins control the full system.",
+    bullets: [
+      '3-role RBAC (Customer / Agent / Admin) via custom JWT middleware chain',
+      'MVC backend — separate controllers, routes and Mongoose models for Users, Tickets, Comments',
+      'Nested comment schema avoids MongoDB document-size limits at scale',
+      'Frontend on Vercel, backend on Render, database on MongoDB Atlas',
+    ],
+    stack: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'JWT', 'bcrypt.js', 'Vite', 'Mongoose'],
+    live: 'https://ticket-management-using-mern.vercel.app',
+    repo: 'https://github.com/Akhil9982/ticket_management_using_mern',
+  },
+  {
+    id: '02',
+    status: 'LIVE',
+    statusColor: 'teal',
+    name: 'Project Insta',
+    tag: 'Social Media App',
+    desc: "An Instagram-inspired social feed with image upload, captions and a responsive post grid — separate React frontend and Express/Node API, backed by MongoDB Atlas and an ImageKit CDN.",
+    bullets: [
+      'Image pipeline via Multer + ImageKit CDN for optimised delivery',
+      'API rate limiting plus file type/size validation for backend security',
+      'Axios-powered React frontend with a responsive Tailwind feed UI',
+      'Frontend on Vercel, REST API on Render',
+    ],
+    stack: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'ImageKit', 'Multer', 'Axios', 'Tailwind CSS'],
+    live: 'https://project-insta-mu.vercel.app',
+    repo: 'https://github.com/Akhil9982/project_insta',
+  },
+  {
+    id: '03',
+    status: 'LIVE',
+    statusColor: 'teal',
+    name: 'EdTech Learning Platform',
+    tag: 'Course & Dashboard Platform',
+    desc: 'A production-grade education platform with course listings, interactive challenges and a responsive student dashboard, built across the full MERN stack.',
+    bullets: [
+      'Full MERN architecture with REST API and JWT auth',
+      'Responsive React dashboard with dynamic course listings',
+      'Live-deployed on GitHub Pages',
+    ],
+    stack: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'REST API'],
+    live: 'https://akhil9982.github.io/edutech/',
+    repo: 'https://github.com/Akhil9982/edutech/',
+  },
+  {
+    id: '04',
+    status: 'BUILD',
+    statusColor: 'amber',
+    name: 'Stock Market Dashboard',
+    tag: 'Financial Analytics, Vanilla JS',
+    desc: 'A financial analytics dashboard that pulls live stock data from public APIs and renders trend charts with hand-built CSS Grid layouts — zero chart-library dependencies.',
+    bullets: [
+      'Async Fetch API with live data polling',
+      'Custom DOM updates for real-time chart rendering',
+      'Responsive grid layout built from scratch, no chart library',
+    ],
+    stack: ['Vanilla JS', 'Fetch API', 'CSS Grid', 'Async/Await'],
+    live: null,
+    repo: 'https://github.com/Akhil9982/stock_market_Analysis_Using_Vanilla_JS',
+  },
+];
+
+const STACK_LAYERS = [
+  {
+    label: 'FRONTEND',
+    items: [
+      { name: 'React.js', level: 'Proficient' },
+      { name: 'JavaScript ES6+', level: 'Strong' },
+      { name: 'HTML5 / CSS3', level: 'Strong' },
+      { name: 'Tailwind CSS', level: 'Proficient' },
+    ],
+  },
+  {
+    label: 'BACKEND',
+    items: [
+      { name: 'Node.js', level: 'Proficient' },
+      { name: 'Express.js', level: 'Proficient' },
+      { name: 'REST APIs', level: 'Strong' },
+    ],
+  },
+  {
+    label: 'DATABASE',
+    items: [
+      { name: 'MongoDB', level: 'Learning' },
+      { name: 'Mongoose', level: 'Learning' },
+    ],
+  },
+  {
+    label: 'ENTERPRISE & TOOLS',
+    items: [
+      { name: 'Git / GitHub', level: '' },
+      { name: 'ServiceNow', level: '' },
+      { name: 'NICE CXone', level: '' },
+      { name: 'Genesys Cloud', level: '' },
+      { name: 'JWT Auth', level: '' },
+      { name: 'Agile / Scrum', level: '' },
+    ],
+  },
+];
+
+const COMPILING = ['Redux', 'TypeScript', 'DSA', 'System Design'];
+
+const LOG_ENTRIES = [
+  {
+    range: 'Apr 2023 — Mar 2025',
+    tag: 'SHIPPED',
+    tagColor: 'teal',
+    role: 'Senior Associate Consultant',
+    org: 'Infosys Ltd · Bhubaneswar',
+    intro: 'Transitioned internally within a global banking client account from Cloud Migration Support to MERN Stack Development.',
+    subgroups: [
+      {
+        range: 'Apr 2024 — Mar 2025',
+        label: 'MERN Stack Development',
+        bullets: [
+          'Engineered custom frontend dashboard components using React.js and Tailwind CSS for internal client portal workflows',
+          'Built backend RESTful APIs using Node.js and Express.js to manage data flow and integrate with enterprise MongoDB databases',
+        ],
+      },
+      {
+        range: 'Apr 2023 — Apr 2024',
+        label: 'Cloud Migration & Support',
+        bullets: [
+          'Managed complex IVR call-flow migrations from Genesys on-premises to NICE CXone cloud infrastructure',
+          'Handled deep-dive log analysis and resolved critical production backend issues for the enterprise contact center',
+        ],
+      },
+    ],
+    chips: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'NICE CXone', 'Genesys'],
+  },
+  {
+    range: 'Jan 2022 — Mar 2023',
+    tag: 'RESOLVED',
+    tagColor: 'amber',
+    role: 'Associate Consultant',
+    org: 'Infosys Ltd · Bengaluru',
+    bullets: [
+      'Deployment & DevOps: Managed deployment pipelines for a major financial institution\u2019s enterprise contact center using Azure DevOps and CI/CD methodologies',
+      'Cloud Migrations: Executed complex on-premise (Genesys) to cloud (NICE CXone) infrastructure migrations, safely promoting code and flows from lower environments to production',
+      'Incident Management: Resolved high-priority (P1) production incidents via ServiceNow, leading cross-functional alignment to ensure rapid system restoration',
+      'QA & Testing: Conducted rigorous UAT and automated testing utilizing CYARA and Azure Test Plans to validate system stability post-deployment',
+    ],
+    chips: ['Azure DevOps', 'CI/CD', 'ServiceNow', 'CYARA'],
+  },
+  {
+    range: 'Jun 2019 — Jul 2021',
+    tag: 'SUPPORTED',
+    tagColor: 'teal',
+    role: 'Associate Customer Support',
+    org: 'Tech Mahindra',
+    intro: 'Transitioned internally from E-commerce Technical Care to Enterprise Contact Center (IVR) Support.',
+    subgroups: [
+      {
+        range: 'Jul 2020 — Jul 2021',
+        label: 'Contact Center IT Support',
+        bullets: [
+          'Managed Genesys (on-premises) IVR infrastructure, executing deep-dive log analysis, ticket resolution, and technical client communications for enterprise operations',
+        ],
+      },
+      {
+        range: 'Jun 2019 — Jun 2020',
+        label: 'E-Commerce Technical Care',
+        bullets: [
+          'Provided L1/L2 technical troubleshooting and end-to-end lifecycle support (orders, warranties, returns) for hardware and large appliances for a global e-commerce giant',
+        ],
+      },
+    ],
+    chips: ['Genesys', 'IVR', 'L1/L2 Support'],
+  },
+  {
+    range: 'May 2018 — Jun 2018',
+    tag: 'SHIPPED',
+    tagColor: 'teal',
+    role: 'Software Developer Intern',
+    org: 'Crushaders Tech Solutions LLP',
+    bullets: [
+      'Built responsive frontend interfaces with HTML5, JavaScript, jQuery and AngularJS',
+      'Assisted with PHP and MySQL backend integration',
+    ],
+    chips: ['HTML5', 'jQuery', 'AngularJS', 'PHP', 'MySQL'],
+  },
+];
+
+const CERTS = [
+  'NICE inContact CIP Core Plus Certification',
+  'Generative AI Landscape',
+  'Risk Based Testing',
+  'Financial Services — Risk and Compliance',
+  'Contact Center — Fundamentals',
+  'Full Stack Web Development — Coding Ninjas',
+];
+
+const LINKS = {
+  email: 'akhilbatulla@gmail.com',
+  phone: '+91 98535 81469',
+  github: 'https://github.com/Akhil9982',
+  linkedin: 'https://www.linkedin.com/in/akhilbatulla',
+  resume: 'https://docs.google.com/document/d/1-QNs_LSYreXVvUcBaFDPxHUGWGdEXkMnvGwWK3Y6mbc/edit?usp=sharing',
+};
+
+/* ---------------- Helpers ---------------- */
+
+function useReveal() {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) el.classList.add('in'); }),
+      { threshold: 0.15 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return ref;
+}
+
+function Reveal({ children, className = '', delay = 0 }) {
+  const ref = useReveal();
+  return (
+    <div ref={ref} className={`reveal ${className}`} style={{ transitionDelay: `${delay}ms` }}>
+      {children}
+    </div>
+  );
+}
+
+function StatusChip({ color = 'teal', children }) {
+  const colors = {
+    teal: 'text-teal border-teal/40 bg-teal/10',
+    amber: 'text-amber border-amber/40 bg-amber/10',
+  };
+  return (
+    <span className={`inline-flex items-center gap-1.5 font-mono text-[11px] tracking-wider px-2.5 py-1 rounded-full border ${colors[color]}`}>
+      <span className={`w-1.5 h-1.5 rounded-full ${color === 'teal' ? 'bg-teal' : 'bg-amber'}`}></span>
+      {children}
+    </span>
+  );
+}
+
+/* ---------------- Boot hero typing ---------------- */
+
+function BootPanel() {
+  const lines = [
+    { k: 'whoami', v: 'Akhil Batulla' },
+    { k: 'role', v: 'Full Stack MERN Developer' },
+    { k: 'based_in', v: 'Bhubaneswar, Odisha, India' },
+    { k: 'status', v: 'OPEN_TO_WORK :: Frontend / MERN' },
+  ];
+  const [shown, setShown] = useState(0);
+  useEffect(() => {
+    if (shown >= lines.length) return;
+    const t = setTimeout(() => setShown((s) => s + 1), 480);
+    return () => clearTimeout(t);
+  }, [shown]);
+
+  return (
+    <div className="font-mono text-[13px] sm:text-sm leading-relaxed">
+      {lines.slice(0, shown).map((l, i) => (
+        <div key={l.k} className="flex flex-wrap gap-2">
+          <span className="text-lo">$</span>
+          <span className="text-amber">{l.k}</span>
+          <span className="text-lo">→</span>
+          <span className={i === shown - 1 ? 'text-hi blink' : 'text-hi'}>{l.v}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ---------------- Sections ---------------- */
+
+function Nav() {
+  const [open, setOpen] = useState(false);
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-ink/80 border-b border-edge/70">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+        <a href="#top" className="flex items-center gap-2 font-display font-semibold text-hi">
+          <span className="w-7 h-7 rounded-md bg-panel2 border border-edge flex items-center justify-center text-amber font-mono text-xs">AB</span>
+          <span className="hidden sm:inline">Akhil Batulla</span>
+        </a>
+        <nav className="hidden md:flex items-center gap-7 font-mono text-[13px] text-lo">
+          {NAV_LINKS.map((l) => (
+            <a key={l.id} href={`#${l.id}`} className="hover:text-hi transition-colors">{l.label}</a>
+          ))}
+        </nav>
+        <div className="hidden md:flex items-center gap-4">
+          <StatusChip color="teal">OPEN_TO_WORK</StatusChip>
+          <a href={`mailto:${LINKS.email}`} className="font-mono text-[13px] px-4 py-2 rounded-md bg-amber text-ink font-medium hover:bg-amber/90 transition-colors">Hire Me →</a>
+        </div>
+        <button onClick={() => setOpen(!open)} className="md:hidden text-hi p-2" aria-label="Toggle menu">
+          <div className="w-5 h-[1.5px] bg-hi mb-1.5"></div>
+          <div className="w-5 h-[1.5px] bg-hi"></div>
+        </button>
       </div>
-      <h1 class="hero-name">Akhil<br /><span>Battula</span></h1>
-      <p class="hero-title">
-        <strong>Full Stack MERN Developer</strong> — React · Node.js · MongoDB
-      </p>
-      <p class="hero-desc">
-        Transitioning 5+ years of enterprise CX engineering into scalable web
-        products. I build clean full-stack applications from API to UI —
-        currently open to Frontend and MERN roles.
-      </p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn-primary">View My Projects ↓</a>
-        <a
-          href="./multimedia/B_Akhil_Full-Stack Web Developer_CV.pdf"
-          class="btn-secondary"
-          target="_blank"
-          >Download Resume</a
-        >
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-num">5<span>+</span></div>
-          <div class="stat-label">Years experience</div>
+      {open && (
+        <div className="md:hidden border-t border-edge bg-ink px-5 py-4 flex flex-col gap-4 font-mono text-sm">
+          {NAV_LINKS.map((l) => (
+            <a key={l.id} href={`#${l.id}`} onClick={() => setOpen(false)} className="text-lo hover:text-hi">{l.label}</a>
+          ))}
+          <a href={`mailto:${LINKS.email}`} className="text-amber">Hire Me →</a>
         </div>
-        <div class="stat-item">
-          <div class="stat-num">6</div>
-          <div class="stat-label">Live projects</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">MERN</div>
-          <div class="stat-label">Core stack</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">2</div>
-          <div class="stat-label">Enterprise clients</div>
-        </div>
-      </div>
-    </section>
+      )}
+    </header>
+  );
+}
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <p class="section-tag">// What I've built</p>
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="section-sub">
-        Real projects that demonstrate my stack — from finance dashboards to
-        full MERN applications.
-      </p>
-
-      <div class="projects-grid">
-        <!-- Project 1: TixHub — MERN, Role-based, Deployed -->
-        <div class="project-card featured">
-          <span class="featured-badge">★ Full Stack · MERN · Deployed</span>
-          <div class="project-number">PROJECT 01</div>
-          <h3 class="project-title">TixHub — Ticket Management System</h3>
-          <p class="project-desc">
-            A production-deployed, role-based support ticket platform built
-            end-to-end on the MERN stack. Customers submit and track issues;
-            agents manage a live queue; admins control the full system — all
-            secured with JWT and bcrypt.
-          </p>
-          <ul class="project-highlights">
-            <li class="highlight-item">
-              3-role RBAC system (Customer / Agent / Admin) with custom JWT
-              middleware chain
-            </li>
-            <li class="highlight-item">
-              MVC backend — separate controllers, routes and Mongoose models for
-              Users, Tickets, and Comments
-            </li>
-            <li class="highlight-item">
-              Nested Comment schema prevents MongoDB document size limits at
-              scale
-            </li>
-            <li class="highlight-item">
-              Fully deployed — frontend on Vercel, backend on Render, DB on
-              MongoDB Atlas
-            </li>
-          </ul>
-          <div class="tech-stack">
-            <span class="tech-pill primary">React.js</span>
-            <span class="tech-pill primary">Node.js</span>
-            <span class="tech-pill primary">MongoDB</span>
-            <span class="tech-pill primary">Express.js</span>
-            <span class="tech-pill primary">JWT Auth</span>
-            <span class="tech-pill">bcrypt.js</span>
-            <span class="tech-pill">Vite</span>
-            <span class="tech-pill">Mongoose</span>
-            <span class="tech-pill">RBAC</span>
-          </div>
-          <div class="project-links">
-            <a
-              href="https://ticket-management-using-mern.vercel.app"
-              class="project-link"
-              target="_blank"
-              ><span class="link-icon">↗</span> Live Demo</a
-            >
-            <a
-              href="https://github.com/Akhil9982/ticket_management_using_mern"
-              class="project-link secondary"
-              target="_blank"
-              >GitHub →</a
-            >
-          </div>
-        </div>
-
-        <!-- Project 2: Project Insta — MERN, ImageKit, Deployed -->
-        <div class="project-card featured">
-          <span class="featured-badge">★ Full Stack · MERN · Deployed</span>
-          <div class="project-number">PROJECT 02</div>
-          <h3 class="project-title">Project Insta — Social Media App</h3>
-          <p class="project-desc">
-            A full-stack Instagram-inspired social feed app with image upload,
-            captions, and a responsive post grid — deployed live with a separate
-            React frontend and Express/Node backend, connected to MongoDB Atlas
-            and ImageKit CDN.
-          </p>
-          <ul class="project-highlights">
-            <li class="highlight-item">
-              Image upload pipeline via Multer + ImageKit CDN for optimised
-              delivery
-            </li>
-            <li class="highlight-item">
-              API rate limiting and file type/size validation for backend
-              security
-            </li>
-            <li class="highlight-item">
-              Axios-powered React frontend with responsive Tailwind CSS feed UI
-            </li>
-            <li class="highlight-item">
-              Fully deployed — frontend on Vercel, REST API on Render
-            </li>
-          </ul>
-          <div class="tech-stack">
-            <span class="tech-pill primary">React.js</span>
-            <span class="tech-pill primary">Node.js</span>
-            <span class="tech-pill primary">MongoDB</span>
-            <span class="tech-pill primary">Express.js</span>
-            <span class="tech-pill primary">ImageKit</span>
-            <span class="tech-pill">Multer</span>
-            <span class="tech-pill">Axios</span>
-            <span class="tech-pill">Tailwind CSS</span>
-            <span class="tech-pill">Vite</span>
-          </div>
-          <div class="project-links">
-            <a
-              href="https://project-insta-mu.vercel.app"
-              class="project-link"
-              target="_blank"
-              ><span class="link-icon">↗</span> Live Demo</a
-            >
-            <a
-              href="https://github.com/Akhil9982/project_insta"
-              class="project-link secondary"
-              target="_blank"
-              >GitHub →</a
-            >
-          </div>
-        </div>
-
-        <!-- Project 3: EdTech -->
-        <div class="project-card">
-          <div class="project-number">PROJECT 03</div>
-          <h3 class="project-title">EdTech Learning Platform</h3>
-          <p class="project-desc">
-            A production-grade educational platform with course listings,
-            interactive challenges, and a responsive student dashboard built
-            across the full MERN stack.
-          </p>
-          <ul class="project-highlights">
-            <li class="highlight-item">
-              Full MERN architecture with REST API and JWT auth
-            </li>
-            <li class="highlight-item">
-              Responsive React dashboard with dynamic course listings
-            </li>
-            <li class="highlight-item">Live-deployed on GitHub Pages</li>
-          </ul>
-          <div class="tech-stack">
-            <span class="tech-pill primary">React.js</span>
-            <span class="tech-pill primary">Node.js</span>
-            <span class="tech-pill primary">MongoDB</span>
-            <span class="tech-pill primary">Express.js</span>
-            <span class="tech-pill">REST API</span>
-          </div>
-          <div class="project-links">
-            <a
-              href="https://akhil9982.github.io/edutech/"
-              class="project-link"
-              target="_blank"
-              ><span class="link-icon">↗</span> Live Demo</a
-            >
-            <a
-              href="https://github.com/Akhil9982/edutech/"
-              class="project-link secondary"
-              target="_blank"
-              >GitHub →</a
-            >
-          </div>
-        </div>
-
-        <!-- Project 4: Stock Dashboard -->
-        <div class="project-card">
-          <div class="project-number">PROJECT 04</div>
-          <h3 class="project-title">Stock Market Dashboard</h3>
-          <p class="project-desc">
-            A financial analytics dashboard that fetches live stock data via
-            public APIs and renders trend charts with custom CSS Grid layouts —
-            zero external chart dependencies.
-          </p>
-          <ul class="project-highlights">
-            <li class="highlight-item">
-              Async Fetch API with live data polling
-            </li>
-            <li class="highlight-item">
-              Complex DOM manipulation for real-time chart updates
-            </li>
-            <li class="highlight-item">
-              Responsive grid layout built from scratch
-            </li>
-          </ul>
-          <div class="tech-stack">
-            <span class="tech-pill primary">Vanilla JS</span>
-            <span class="tech-pill primary">Fetch API</span>
-            <span class="tech-pill">CSS Grid</span>
-            <span class="tech-pill">Async/Await</span>
-          </div>
-          <div class="project-links">
-            <a
-              href="https://github.com/Akhil9982/stock_market_Analysis_Using_Vanilla_JS"
-              class="project-link"
-              target="_blank"
-              >GitHub →</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <p class="section-tag">// What I work with</p>
-      <h2 class="section-title">Technical Skills</h2>
-      <p class="section-sub">
-        MERN stack as core — augmented with enterprise tooling from 5 years of
-        professional experience.
-      </p>
-
-      <div class="skills-layout">
+function Hero() {
+  return (
+    <section id="top" className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 grid-bg">
+      <div className="absolute inset-0 bg-linear-to-b from-ink via-ink/95 to-ink pointer-events-none"></div>
+      <div className="relative max-w-6xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1.15fr_0.85fr] gap-12 items-center">
         <div>
-          <div class="skills-category">
-            <p class="skills-cat-label">Frontend</p>
-            <div class="skill-bars">
-              <div class="skill-bar-item">
-                <div class="skill-bar-top">
-                  <span class="skill-bar-name">React.js</span
-                  ><span class="skill-bar-level">Proficient</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill" data-width="82"></div>
-                </div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-top">
-                  <span class="skill-bar-name">JavaScript ES6+</span
-                  ><span class="skill-bar-level">Strong</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill" data-width="88"></div>
-                </div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-top">
-                  <span class="skill-bar-name">HTML5 / CSS3</span
-                  ><span class="skill-bar-level">Strong</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill" data-width="90"></div>
-                </div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-top">
-                  <span class="skill-bar-name">Tailwind CSS</span
-                  ><span class="skill-bar-level">Proficient</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill" data-width="75"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="skills-category">
-            <p class="skills-cat-label">Backend &amp; Database</p>
-            <div class="skill-bars">
-              <div class="skill-bar-item">
-                <div class="skill-bar-top">
-                  <span class="skill-bar-name">Node.js</span
-                  ><span class="skill-bar-level">Proficient</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill" data-width="78"></div>
-                </div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-top">
-                  <span class="skill-bar-name">Express.js</span
-                  ><span class="skill-bar-level">Proficient</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill" data-width="76"></div>
-                </div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-top">
-                  <span class="skill-bar-name">MongoDB</span
-                  ><span class="skill-bar-level">Learning</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill" data-width="68"></div>
-                </div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-top">
-                  <span class="skill-bar-name">REST APIs</span
-                  ><span class="skill-bar-level">Strong</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill" data-width="83"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="skills-category">
-            <p class="skills-cat-label">Enterprise &amp; Tools</p>
-            <div class="tools-grid">
-              <span class="tool-chip">Git / GitHub</span>
-              <span class="tool-chip">ServiceNow</span>
-              <span class="tool-chip">NICE CXone</span>
-              <span class="tool-chip">Genesys Cloud</span>
-              <span class="tool-chip">VS Code</span>
-              <span class="tool-chip">Agile / Scrum</span>
-              <span class="tool-chip">IVR / Studio</span>
-              <span class="tool-chip">jQuery</span>
-              <span class="tool-chip">Bootstrap</span>
-              <span class="tool-chip">JWT Auth</span>
-              <span class="tool-chip">LocalStorage API</span>
-              <span class="tool-chip">Fetch API</span>
-            </div>
-          </div>
-          <div class="skills-category" style="margin-top: 32px">
-            <p class="skills-cat-label">Currently learning</p>
-            <div class="tools-grid">
-              <span
-                class="tool-chip"
-                style="border-color: rgba(0, 229, 255, 0.2); color: var(--cyan)"
-                >Redux</span
-              >
-              <span
-                class="tool-chip"
-                style="border-color: rgba(0, 229, 255, 0.2); color: var(--cyan)"
-                >TypeScript</span
-              >
-              <span
-                class="tool-chip"
-                style="border-color: rgba(0, 229, 255, 0.2); color: var(--cyan)"
-                >DSA</span
-              >
-              <span
-                class="tool-chip"
-                style="border-color: rgba(0, 229, 255, 0.2); color: var(--cyan)"
-                >System Design</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <p class="section-tag">// Where I've worked</p>
-      <h2 class="section-title">Experience</h2>
-      <p class="section-sub">
-        5+ years across two major enterprise technology firms, now pivoting
-        full-time to product development.
-      </p>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-period">Apr 2023<br />Mar 2025</div>
-          <div class="timeline-content">
-            <div class="timeline-role">Senior Associate Consultant</div>
-            <div class="timeline-company">Infosys · Bhubaneswar</div>
-            <ul class="timeline-bullets">
-              <li>
-                Migrated complex IVR inbound flows from Genesys (on-prem) to
-                NICE CXone Cloud, reducing support call latency for a major
-                banking client
-              </li>
-              <li>
-                Managed critical P1 production incidents via ServiceNow with
-                cross-team coordination and SLA-bound resolution
-              </li>
-              <li>
-                Developed and maintained Studio scripts to automate
-                business-critical IVR logic as per client requirements
-              </li>
-              <li>
-                Mentored new joiners on project architecture and client
-                processes, reducing onboarding time
-              </li>
-            </ul>
-            <div class="timeline-tags">
-              <span class="timeline-tag">NICE CXone</span>
-              <span class="timeline-tag">Genesys</span>
-              <span class="timeline-tag">ServiceNow</span>
-              <span class="timeline-tag">IVR Migration</span>
-              <span class="timeline-tag">Agile</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-period">Jan 2022<br />Apr 2023</div>
-          <div class="timeline-content">
-            <div class="timeline-role">Associate Consultant</div>
-            <div class="timeline-company">Infosys · Bengaluru</div>
-            <ul class="timeline-bullets">
-              <li>
-                Built and debugged Studio IVR scripts in the Genesys platform
-                for inbound banking workflows
-              </li>
-              <li>
-                Handled incident escalation and client communication for P2/P3
-                production tickets
-              </li>
-            </ul>
-            <div class="timeline-tags">
-              <span class="timeline-tag">Genesys</span>
-              <span class="timeline-tag">IVR</span>
-              <span class="timeline-tag">Incident Mgmt</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-period">Jun 2019<br />Jul 2021</div>
-          <div class="timeline-content">
-            <div class="timeline-role">Associate Customer Support</div>
-            <div class="timeline-company">Tech Mahindra · Bhubaneswar</div>
-            <ul class="timeline-bullets">
-              <li>
-                Managed high-volume inbound customer queries for a leading
-                e-commerce client
-              </li>
-              <li>
-                Led escalation resolution and coordinated with backend teams to
-                close complex cases
-              </li>
-            </ul>
-            <div class="timeline-tags">
-              <span class="timeline-tag">Customer Support</span>
-              <span class="timeline-tag">Escalation Mgmt</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-period">May 2018<br />Jun 2018</div>
-          <div class="timeline-content">
-            <div class="timeline-role">Software Developer Intern</div>
-            <div class="timeline-company">
-              Crushaders Tech Solutions · Bhubaneswar
-            </div>
-            <ul class="timeline-bullets">
-              <li>
-                Built responsive frontend interfaces with HTML5, JavaScript,
-                jQuery, and AngularJS
-              </li>
-              <li>Assisted in PHP + MySQL backend integration</li>
-            </ul>
-            <div class="timeline-tags">
-              <span class="timeline-tag">HTML5</span>
-              <span class="timeline-tag">JavaScript</span>
-              <span class="timeline-tag">AngularJS</span>
-              <span class="timeline-tag">PHP</span>
-              <span class="timeline-tag">MySQL</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <p class="section-tag">// Who I am</p>
-      <h2 class="section-title">About Me</h2>
-
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            I'm a <strong>Full Stack MERN Developer</strong> based in
-            Bhubaneswar, India, making the transition from 5 years of enterprise
-            contact-center engineering into product development.
+          <p className="font-mono text-xs tracking-[0.2em] text-amber mb-5">// SYSTEM STATUS</p>
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] font-semibold text-hi">
+            Five+ years on the pager,<br />now shipping the product.
+          </h1>
+          <p className="mt-6 text-lo text-base sm:text-lg max-w-xl leading-relaxed">
+            I'm a Full Stack MERN Developer who spent 5.5 years keeping enterprise banking
+            infrastructure online — IVR migrations, P1 incidents, production support. I bring
+            that same discipline to building React, Node and MongoDB applications, end to end.
           </p>
-          <p>
-            Working at <strong>Infosys</strong> taught me how to operate in
-            complex, high-stakes systems — handling P1 incidents, managing
-            stakeholder communication, and delivering under SLA pressure. I
-            bring that same discipline to software development.
-          </p>
-          <p>
-            I'm currently completing a
-            <strong
-              >Full Stack Web Development certification at Coding Ninjas</strong
-            >, building MERN projects end-to-end, and actively seeking
-            <strong>Frontend</strong> or <strong>MERN Stack</strong> roles where
-            I can grow fast.
-          </p>
-
-          <div class="about-meta" style="margin-top: 28px">
-            <div class="meta-item">
-              <span class="meta-key">Location</span
-              ><span class="meta-val">Bhubaneswar, Odisha, India</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-key">Education</span
-              ><span class="meta-val"
-                >B.Tech CSE — Gandhi Engineering College</span
-              >
-            </div>
-            <div class="meta-item">
-              <span class="meta-key">Certification</span
-              ><span class="meta-val"
-                >Full Stack Web Dev — Coding Ninjas (2024–2026)</span
-              >
-            </div>
-            <div class="meta-item">
-              <span class="meta-key">Open to</span
-              ><span class="meta-val">Full-time · Contract · Remote</span>
-            </div>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a href="#projects" className="font-mono text-sm px-5 py-3 rounded-md bg-amber text-ink font-medium hover:bg-amber/90 transition-colors">View Deployments ↓</a>
+            <a href={LINKS.resume} target="_blank" rel="noopener noreferrer" className="font-mono text-sm px-5 py-3 rounded-md border border-edge text-hi hover:border-lo transition-colors">Download Resume</a>
           </div>
         </div>
-        <div>
-          <div class="about-card">
-            <p class="about-card-title">Certifications</p>
-            <div class="cert-list">
-              <div class="cert-item">
-                <div class="cert-dot"></div>
-                <div class="cert-name">
-                  NICE inContact CIP Core Plus Certification
+
+        <Reveal>
+          <div className="rounded-xl border border-edge bg-panel/80 backdrop-blur p-6 glow-amber">
+            <div className="flex items-center justify-between mb-5">
+              <span className="font-mono text-[11px] tracking-widest text-lo">boot.log</span>
+              <span className="flex gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-edge"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-edge"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-teal"></span>
+              </span>
+            </div>
+            <BootPanel />
+            <div className="mt-6 pt-6 border-t border-edge grid grid-cols-2 gap-4">
+              {STATS.map((s) => (
+                <div key={s.label}>
+                  <div className="font-display text-2xl font-semibold text-hi">{s.value}</div>
+                  <div className="font-mono text-[10px] tracking-wider text-amber mt-0.5">{s.label}</div>
+                  <div className="text-[11px] text-lo mt-0.5">{s.sub}</div>
                 </div>
-              </div>
-              <div class="cert-item">
-                <div class="cert-dot"></div>
-                <div class="cert-name">Generative AI Landscape</div>
-              </div>
-              <div class="cert-item">
-                <div class="cert-dot"></div>
-                <div class="cert-name">Risk Based Testing</div>
-              </div>
-              <div class="cert-item">
-                <div class="cert-dot"></div>
-                <div class="cert-name">
-                  Financial Services — Risk and Compliance
-                </div>
-              </div>
-              <div class="cert-item">
-                <div class="cert-dot"></div>
-                <div class="cert-name">Contact Center — Fundamentals</div>
-              </div>
-              <div class="cert-item">
-                <div class="cert-dot"></div>
-                <div class="cert-name">
-                  Full Stack Web Development — Coding Ninjas
-                </div>
-              </div>
+              ))}
             </div>
           </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function ProjectCard({ p, idx }) {
+  return (
+    <Reveal delay={idx * 80}>
+      <div className="rounded-xl border border-edge bg-panel/60 p-6 sm:p-8 hover:border-lo/50 transition-colors h-full flex flex-col">
+        <div className="flex items-center justify-between mb-4">
+          <span className="font-mono text-xs text-lo tracking-widest">DEPLOY_{p.id}</span>
+          <StatusChip color={p.statusColor}>{p.status}</StatusChip>
+        </div>
+        <h3 className="font-display text-xl sm:text-2xl font-semibold text-hi">{p.name}</h3>
+        <p className="font-mono text-[12px] text-amber mt-1">{p.tag}</p>
+        <p className="text-lo text-sm mt-4 leading-relaxed">{p.desc}</p>
+        <ul className="mt-4 space-y-2 flex-1">
+          {p.bullets.map((b, i) => (
+            <li key={i} className="text-[13px] text-hi/90 flex gap-2">
+              <span className="text-teal mt-0.5">▸</span>
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
+        <div className="flex flex-wrap gap-1.5 mt-5">
+          {p.stack.map((t) => (
+            <span key={t} className="font-mono text-[10.5px] px-2 py-1 rounded border border-edge text-lo">{t}</span>
+          ))}
+        </div>
+        <div className="flex gap-4 mt-5 pt-5 border-t border-edge">
+          {p.live && <a href={p.live} target="_blank" rel="noopener noreferrer" className="font-mono text-[12px] text-teal hover:underline">↗ Live Demo</a>}
+          <a href={p.repo} target="_blank" rel="noopener noreferrer" className="font-mono text-[12px] text-lo hover:text-hi hover:underline">Source →</a>
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
+function Projects() {
+  return (
+    <section id="projects" className="py-24 sm:py-32 border-t border-edge/60">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <Reveal>
+          <p className="font-mono text-xs tracking-[0.2em] text-amber mb-3">// DEPLOYMENT LOG</p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-hi">Things I've shipped</h2>
+          <p className="text-lo mt-3 max-w-xl">Four projects, end to end — from database schema to deployed URL.</p>
+        </Reveal>
+        <div className="grid sm:grid-cols-2 gap-6 mt-12">
+          {PROJECTS.map((p, i) => <ProjectCard key={p.id} p={p} idx={i} />)}
         </div>
       </div>
     </section>
+  );
+}
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="contact-inner">
-        <p class="section-tag" style="justify-content: center; display: flex">
-          // Get in touch
-        </p>
-        <h2 class="section-title">Let's work together</h2>
-        <p class="section-sub" style="margin: 0 auto 36px; text-align: center">
-          Open to full-time roles, contract work, and interesting projects. I
-          reply fast.
-        </p>
-        <a href="mailto:b_akhilkumar@outlook.com" class="contact-email"
-          >b_akhilkumar@outlook.com</a
-        >
-        <div class="contact-links">
-          <a
-            href="https://github.com/Akhil9982"
-            class="contact-link"
-            target="_blank"
-            >GitHub ↗</a
-          >
-          <a
-            href="https://www.linkedin.com/in/akhilbattula"
-            class="contact-link"
-            target="_blank"
-            >LinkedIn ↗</a
-          >
-          <a
-            href="https://akhil9982.github.io/Portfolio/multimedia/B_Akhil_Full-Stack_Web_Developer_CV.pdf"
-            class="contact-link"
-            target="_blank"
-            >Resume PDF ↗</a
-          >
+function StackLayer({ layer, idx }) {
+  return (
+    <Reveal delay={idx * 70}>
+      <div className="grid sm:grid-cols-[160px_1fr] gap-4 sm:gap-8 py-5 border-b border-edge/60 last:border-0">
+        <div className="font-mono text-xs tracking-widest text-amber pt-1">{layer.label}</div>
+        <div className="flex flex-wrap gap-2.5">
+          {layer.items.map((it) => (
+            <span key={it.name} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-edge bg-panel2 text-sm text-hi">
+              {it.name}
+              {it.level && <span className="font-mono text-[10px] text-lo">· {it.level}</span>}
+            </span>
+          ))}
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
+function Stack() {
+  return (
+    <section id="stack" className="py-24 sm:py-32 border-t border-edge/60">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <Reveal>
+          <p className="font-mono text-xs tracking-[0.2em] text-amber mb-3">// THE STACK</p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-hi">What it's built on</h2>
+          <p className="text-lo mt-3 max-w-xl">MERN at the core, layered on top of five years of enterprise tooling.</p>
+        </Reveal>
+
+        <div className="mt-10 rounded-xl border border-edge bg-panel/40 px-6 sm:px-8">
+          {STACK_LAYERS.map((l, i) => <StackLayer key={l.label} layer={l} idx={i} />)}
+        </div>
+
+        <Reveal delay={120}>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <span className="font-mono text-xs tracking-widest text-lo">CURRENTLY COMPILING:</span>
+            {COMPILING.map((c) => (
+              <span key={c} className="font-mono text-[11px] px-2.5 py-1 rounded-full border border-amber/40 text-amber bg-amber/10">{c}</span>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function LogEntry({ e, idx, last }) {
+  return (
+    <Reveal delay={idx * 60}>
+      <div className="relative pl-8 sm:pl-10 pb-10">
+        {!last && <span className="absolute left-1.25 sm:left-1.75 top-3 bottom-0 w-px timeline-line"></span>}
+        <span className={`absolute left-0 top-1.5 w-3 h-3 rounded-full border-2 ${e.tagColor === 'teal' ? 'border-teal bg-ink' : 'border-amber bg-ink'}`}></span>
+        <div className="flex flex-wrap items-center gap-3 mb-1.5">
+          <span className="font-mono text-[12px] text-lo">{e.range}</span>
+          <StatusChip color={e.tagColor}>{e.tag}</StatusChip>
+        </div>
+        <h3 className="font-display text-lg font-semibold text-hi">{e.role}</h3>
+        <p className="font-mono text-[12px] text-lo mt-0.5">{e.org}</p>
+
+        {e.intro && <p className="text-[13px] text-lo mt-3 italic">{e.intro}</p>}
+
+        {e.subgroups ? (
+          <div className="mt-4 space-y-4">
+            {e.subgroups.map((sg) => (
+              <div key={sg.label} className="pl-4 border-l border-edge">
+                <div className="flex flex-wrap items-baseline gap-2">
+                  <span className="font-mono text-[11px] text-teal">{sg.label}</span>
+                  <span className="font-mono text-[10.5px] text-lo">{sg.range}</span>
+                </div>
+                <ul className="mt-2 space-y-1.5">
+                  {sg.bullets.map((b, i) => (
+                    <li key={i} className="text-[13px] text-hi/85 flex gap-2">
+                      <span className="text-amber mt-0.5">▸</span><span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <ul className="mt-3 space-y-1.5">
+            {e.bullets.map((b, i) => (
+              <li key={i} className="text-[13px] text-hi/85 flex gap-2">
+                <span className="text-amber mt-0.5">▸</span><span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <div className="flex flex-wrap gap-1.5 mt-4">
+          {e.chips.map((c) => <span key={c} className="font-mono text-[10px] px-2 py-0.5 rounded border border-edge text-lo">{c}</span>)}
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
+function Log() {
+  return (
+    <section id="log" className="py-24 sm:py-32 border-t border-edge/60">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <Reveal>
+          <p className="font-mono text-xs tracking-[0.2em] text-amber mb-3">// CHANGE LOG</p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-hi">Where I've worked</h2>
+          <p className="text-lo mt-3 max-w-xl">Five+ years across two enterprise firms, logged like the deploys and incidents I used to manage.</p>
+        </Reveal>
+        <div className="mt-12 max-w-3xl">
+          {LOG_ENTRIES.map((e, i) => (
+            <LogEntry key={e.role} e={e} idx={i} last={i === LOG_ENTRIES.length - 1} />
+          ))}
         </div>
       </div>
     </section>
+  );
+}
 
-    <footer>
-      <span>Akhil Battula © 2026</span>
-      <span>Bhubaneswar · Full Stack MERN Developer</span>
+function About() {
+  const manifest = [
+    ['LOCATION', 'Bhubaneswar, Odisha, India'],
+    ['EDUCATION', 'B.Tech CSE — Gandhi Engineering College'],
+    ['CERTIFICATION', 'Full Stack Web Dev — Coding Ninjas'],
+    ['OPEN_TO', 'Full-time · Contract · Remote'],
+  ];
+  return (
+    <section id="about" className="py-24 sm:py-32 border-t border-edge/60">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1.1fr_0.9fr] gap-12">
+        <Reveal>
+          <div>
+            <p className="font-mono text-xs tracking-[0.2em] text-amber mb-3">// WHO I AM</p>
+            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-hi">About me</h2>
+            <div className="mt-6 space-y-4 text-lo leading-relaxed text-[15px]">
+              <p>
+                I'm a <span className="text-hi font-medium">Full Stack MERN Developer</span> based in
+                Bhubaneswar, making the move from enterprise contact-center engineering into product development.
+              </p>
+              <p>
+                At <span className="text-hi font-medium">Infosys</span>, I worked inside complex,
+                high-stakes systems — leading IVR cloud migrations, resolving P1 production incidents,
+                and managing stakeholders under SLA pressure. That's the same discipline I now bring to
+                writing React components and Node APIs.
+              </p>
+              <p>
+                I've spent the past year building <span className="text-hi font-medium">MERN
+                projects end to end</span> — from database schema to deployed URL — while
+                actively looking for <span className="text-hi font-medium">Frontend</span> or
+                <span className="text-hi font-medium"> MERN Stack</span> roles.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={100}>
+          <div className="rounded-xl border border-edge bg-panel/60 p-6 sm:p-7">
+            <p className="font-mono text-[11px] tracking-widest text-lo mb-5">build_manifest.json</p>
+            <div className="space-y-4">
+              {manifest.map(([k, v]) => (
+                <div key={k} className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 font-mono text-[13px]">
+                  <span className="text-amber w-36 shrink-0">{k}</span>
+                  <span className="text-hi">{v}</span>
+                </div>
+              ))}
+            </div>
+            <p className="font-mono text-[11px] tracking-widest text-lo mt-7 mb-3">certifications[]</p>
+            <ul className="space-y-1.5">
+              {CERTS.map((c) => (
+                <li key={c} className="text-[13px] text-hi/85 flex gap-2">
+                  <span className="text-teal">✓</span><span>{c}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Contact() {
+  return (
+    <section id="contact" className="py-24 sm:py-32 border-t border-edge/60 grid-bg">
+      <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
+        <Reveal>
+          <p className="font-mono text-xs tracking-[0.2em] text-amber mb-3">// GET IN TOUCH</p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-hi">Let's build something.</h2>
+          <p className="text-lo mt-3">Open to full-time roles, contract work and interesting MERN projects. I reply fast.</p>
+        </Reveal>
+
+        <Reveal delay={100}>
+          <div className="mt-10 rounded-xl border border-edge bg-panel/60 p-6 sm:p-8 text-left font-mono text-[13px] sm:text-sm">
+            <p className="text-lo">$ contact --init</p>
+            <p className="mt-3 text-hi">email <span className="text-lo">→</span> <a href={`mailto:${LINKS.email}`} className="text-teal hover:underline">{LINKS.email}</a></p>
+            <p className="mt-1 text-hi">phone <span className="text-lo">→</span> <span className="text-hi">{LINKS.phone}</span></p>
+            <p className="mt-1 text-hi">github <span className="text-lo">→</span> <a href={LINKS.github} target="_blank" rel="noopener noreferrer" className="text-teal hover:underline">{LINKS.github.replace('https://','')}</a></p>
+            <p className="mt-1 text-hi">linkedin <span className="text-lo">→</span> <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="text-teal hover:underline">{LINKS.linkedin.replace('https://','')}</a></p>
+            <p className="mt-3 text-amber blink">status: ready</p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={150}>
+          <a href={`mailto:${LINKS.email}`} className="inline-block mt-8 font-mono text-sm px-6 py-3 rounded-md bg-amber text-ink font-medium hover:bg-amber/90 transition-colors">Send a message →</a>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-edge/60 py-8">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-[11px] text-lo">
+        <span>Akhil Batulla © {new Date().getFullYear()} · Bhubaneswar</span>
+        <span>Full Stack MERN Developer</span>
+      </div>
     </footer>
-  </body>
+  );
+}
+
+function App() {
+  return (
+    <div className="min-h-screen">
+      <Nav />
+      <Hero />
+      <Projects />
+      <Stack />
+      <Log />
+      <About />
+      <Contact />
+      <Footer />
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+</body>
 </html>
