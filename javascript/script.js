@@ -1,21 +1,66 @@
-  const fills = document.querySelectorAll('.skill-fill');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const el = e.target;
-        el.style.width = el.dataset.width + '%';
-        observer.unobserve(el);
-      }
-    });
-  }, { threshold: 0.2 });
-  fills.forEach(f => {
-    f.style.transition = 'width 1s cubic-bezier(0.4,0,0.2,1)';
-    observer.observe(f);
-  });
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
 
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+const revealItems = document.querySelectorAll(".reveal");
+
+if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+} else {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    {
+      rootMargin: "0px 0px -12% 0px",
+      threshold: 0.12,
+    },
+  );
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+}
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", (event) => {
+    const target = document.querySelector(anchor.getAttribute("href"));
+
+    if (!target) return;
+
+    event.preventDefault();
+    target.scrollIntoView({
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+      block: "start",
     });
   });
+});
+
+const progress = document.querySelector(".scroll-progress");
+
+if (progress) {
+  let ticking = false;
+
+  const updateProgress = () => {
+    const scrollable =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const amount = scrollable > 0 ? window.scrollY / scrollable : 0;
+
+    progress.style.transform = `scaleX(${Math.min(amount, 1)})`;
+    ticking = false;
+  };
+
+  const queueProgressUpdate = () => {
+    if (ticking) return;
+
+    window.requestAnimationFrame(updateProgress);
+    ticking = true;
+  };
+
+  updateProgress();
+  window.addEventListener("scroll", queueProgressUpdate, { passive: true });
+  window.addEventListener("resize", queueProgressUpdate);
+}
